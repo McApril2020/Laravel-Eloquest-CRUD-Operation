@@ -7,42 +7,44 @@ use App\Post;
 
 class PostController extends Controller
 {
-    public function addPost() {
+    public function index() {
 
-        return view('add-post');
+        return view('index');
 
     }
 
-    public function createPost(Request $request) {
+    public function create() {
         $posts = new Post;
         $posts->title = request('title');
         $posts->body = request('body');
+        $posts->author = request('author');
         $posts->save();
 
         return 'Post has been successfully created';
     }
 
-    public function showPost() {
+    public function store() {
         $posts = Post::all();
         return view('post', ['posts' => $posts]);
 
 
     }
 
-    public function deletePost($id) {
+    public function delete($id) {
         Post::where('id', $id)->delete();
         return 'Successfully Deleted!';
     }
 
-    public function updatePost(Request $request) {
+    public function update(Request $request) {
         $post = Post::where('id', $request->id)->first();
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->author = $request->author;
         $post->save();
         return 'Post has been Updated Successfully';
     }
 
-    public function updatedPost($id) {
+    public function edit($id) {
         $post = Post::where('id', $id)->first();
 
         return view('edit-post', ['post' => $post]);

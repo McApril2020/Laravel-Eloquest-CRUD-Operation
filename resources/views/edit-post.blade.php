@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <form action="{{route('post.update')}}" method="GET">
+                    <form action="{{route('post.update')}}" method="POST">
                         @csrf
                             <input type="hidden" name="id" value="{{$post->id}}">
                         <div class="from-group">
@@ -22,6 +22,10 @@
                         <div class="from-group">
                             <label for="body">Enter post body</label>
                            <textarea class="form-control" name="body" rows="3">{{$post->body}}</textarea>
+                        </div>
+                        <div class="from-group">
+                            <label for="title">Author</label>
+                            <input class="form-control" type="text" name="author" value="{{$post->author}}" placeholder="Author">
                         </div>
                         <button class="btn btn-success mt-2" type="submit">Save</button>
                     </form>
