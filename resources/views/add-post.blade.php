@@ -22,6 +22,10 @@
                             <label for="body">Post Body...</label>
                            <textarea class="form-control" name="body" rows="3"></textarea>
                         </div>
+                        <div class="from-group">
+                            <label for="title">Author</label>
+                            <input class="form-control" type="text" name="author" placeholder="Author">
+                        </div>
                         <button class="btn btn-success mt-2" type="submit">Add Post</button>
                     </form>
                 </div>
