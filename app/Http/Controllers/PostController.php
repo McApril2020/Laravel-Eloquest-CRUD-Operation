@@ -44,7 +44,7 @@ class PostController extends Controller
         return 'Post has been Updated Successfully';
     }
 
-    public function edit($id) {
+    public function edit_form($id) {
         $post = Post::where('id', $id)->first();
 
         return view('edit-post', ['post' => $post]);
