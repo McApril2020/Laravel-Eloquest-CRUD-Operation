@@ -18,6 +18,7 @@
                             <tr>
                                 <th>Post Title</th>
                                 <th>Post Body</th>
+                                <th>Author</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -26,6 +27,8 @@
                                 <tr>
                                     <td>{{$post->title}}</td>
                                     <td>{{$post->body}}</td>
+                                    <td>{{$post->author}}</td>
+
                                     <th>
                                     <a class="btn btn-info" href="/edit-post/{{$post->id}}">Edit</a>
                                     <a class="btn btn-danger" href="/delete-post/{{$post->id}}">Delete</a>
