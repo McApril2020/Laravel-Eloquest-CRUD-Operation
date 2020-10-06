@@ -16,6 +16,7 @@ class AlterPostsTable extends Migration
         Schema::table('posts', function (Blueprint $table) {
             //
             $table->string('author');
+            $table->timestamps();
         });
     }
 
